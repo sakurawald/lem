@@ -70,10 +70,10 @@
          (this-command-keys (vi-this-command-keys))
          (pending-keys (cdr this-command-keys)))
     
-    ;; For the command `self-insert`, the `this-command-keys` is typically only 1 char. (pending-keys = nil)
+    ;; For the command `self-insert`, the `this-command-keys` is typically only 1 key. (pending-keys = nil)
     ;; If pending-keys is NOT nil, then these keys are used to disguish the keys between `self-insert` command and other commands. 
     ;; For other commands, we can simply ignore the pending-keys.
-    ;; For self-insert command, we should also flusthese pending-keys.
+    ;; For self-insert command, we should also flush these pending-keys.
     (when (and
            (typep command 'self-insert)
            pending-keys)
